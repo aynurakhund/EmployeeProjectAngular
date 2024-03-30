@@ -1,0 +1,33 @@
+<div class="card d-flux gap-3 p-5">
+  <div class="bg-warning w-50 px-5">
+    <h1>Our Employee Table</h1>
+  </div>
+  <div class="table d-flux gap-3 p-2">
+    <table class="table table-success table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Birthdate</th>
+          <th>Department</th>
+          <th>Speciality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of employees">
+          <td>{{ item.firstName }}</td>
+          <td>{{ item.lastName }}</td>
+          <td>{{ item.birthDate }}</td>
+          <td>{{ item.department }}</td>
+          <td>{{ item.speciality }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="buttons d-flex flex-row gap-5">
+      <button class="btn btn-primary w-25" (click)="addEmployees()">
+        Add Employee
+      </button>
+      <button class="btn btn-secondary w-25" (click)="main()">Main Page</button>
+    </div>
+  </div>
+</div>

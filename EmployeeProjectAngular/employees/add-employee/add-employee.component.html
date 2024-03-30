@@ -1,0 +1,97 @@
+<div class="form pb-0">
+  <div
+    class="d-flex flex-column align-items-center justify-content-center pb-0"
+  >
+    <form [formGroup]="employeeForm">
+      <div class="px-5 py-4 d-flex flex-column gap-1">
+        <input
+          type="text"
+          class="form-control w-75 h-25"
+          placeholder="Firstname"
+          formControlName="firstName"
+        />
+        <div
+          class="alert alert-danger w-25 h-25"
+          *ngIf="!employeeForm.get('firstName').valid"
+        >
+          Enter name
+        </div>
+        <input
+          type="text"
+          class="form-control w-75 h-25"
+          placeholder="Lastname"
+          formControlName="lastName"
+        />
+        <div
+          class="alert alert-danger w-25 h-25"
+          *ngIf="!employeeForm.get('lastName').valid"
+        >
+          Enter surname
+        </div>
+        <input
+          type="text"
+          class="form-control w-75 h-25"
+          placeholder="birthDate"
+          formControlName="birthDate"
+        />
+        <div
+          class="alert alert-danger w-25 h-25"
+          *ngIf="!employeeForm.get('birthDate').valid"
+        >
+          Enter birthdate
+        </div>
+        <label
+          for="department"
+          class="text-lg-start bg-light"
+          style="width: 10%"
+          >DEPARTAMENT</label
+        >
+
+        <select
+          id="department"
+          class="form-control w-25 h-25"
+          formControlName="department"
+        >
+          <option value="hr">HR</option>
+          <option value="it">IT</option>
+          <option value="acc">ACC</option>
+          <option value="lp">LP</option>
+          <option value="rm">RM</option>
+        </select>
+        <input
+          type="text"
+          class="form-control w-75 h-25"
+          placeholder="speciality"
+          formControlName="speciality"
+        />
+        <div
+          class="alert alert-danger w-25 h-25"
+          *ngIf="!employeeForm.get('speciality').valid"
+        >
+          Enter speciality
+        </div>
+        <div class="buttons d-flex flex-row gap-5">
+          <button
+            class="btn btn-warning w-25 "
+            (click)="initialStep()"
+            [disabled]="!check()"
+          >
+            SEND
+          </button>
+          <button
+            class="btn btn-primary  w-25"
+            (click)="showTable()"
+          >
+            Show Table
+          </button>
+          <button
+          class="btn btn-secondary  w-25"
+          (click)="main()"
+        >
+          Main Page
+        </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
